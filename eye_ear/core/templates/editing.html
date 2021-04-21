@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Editing : {{title}} | By {{author.get_full_name}} | My Audio Blogs</title>
+<meta name="title" content="Editing : {{title}} | By {{author.get_full_name}} | My Audio Blogs">
+<meta content="{{description_text}}" name="description" />
+<meta content="Editing, My Audio Blogs, Blogs, Audio Blogs, audio with blogs, best blogs, audible blogs"
+    name="keywords" />
+
+<meta name="og:title" content="Editing : {{title}} | By {{author.get_full_name}} | My Audio Blogs" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="https://www.myaudioblogs.co/" />
+<meta name="og:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg" />
+<meta name="og:description" content="{{description_text}}" />
+
+<meta name="twitter:title" content="Editing : {{title}} | By {{author.get_full_name}} | My Audio Blogs">
+<meta name="twitter:description" content="{{description_text}}">
+<meta name="twitter:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.myaudioblogs.co/">
+{% endblock %}
+
+{% block files %}
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/raw"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@2.0.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@1.3.0/dist/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@2.6.0/dist/bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    let hostname = "https://" + window.location.hostname;
+    if (hostname == "https://localhost") {
+        hostname = "http://localhost:8000";
+    }
+
+    function EditorJsSettingWithoutData() {
+        return new EditorJS({
+            holder: "editorjs",
+
+            tools: {
+                header: {
+                    class: Header,
+                    shortcut: "CMD+SHIFT+H",
+                },
+                style: EditorJSStyle.StyleInlineTool,
+                delimiter: Delimiter,
+                paragraph: {
+                    class: Paragraph,
+                    inlineToolbar: true,
+                },
+                underline: Underline,
+                quote: {
+                    class: Quote,
+                    inlineToolbar: true,
+                    shortcut: "CMD+SHIFT+O",
+                    config: {
+                        quotePlaceholder: "Enter a quote",
+                        captionPlaceholder: "Quote's author",
+                    },
+                },
+                list: {
+                    class: List,
+                    inlineToolbar: true,
+                },
+                checklist: {
+                    class: Checklist,
+                    inlineToolbar: true,
+                },
+                image: {
+                    class: ImageTool,
+                    config: {
+                        endpoints: {
+                            byFile: `${hostname}/fileUpload`,
+                            byUrl: `${hostname}/fetchUrl`,
+                        },
+                    },
+                },
+                linkTool: {
+                    class: LinkTool,
+                    config: {
+                        endpoint: `${hostname}/fetchLink`,
+                    },
+                },
+                code: CodeTool,
+                raw: RawTool,
+                table: {
+                    class: Table,
+                    inlineToolbar: true,
+                    config: {
+                        rows: 2,
+                        cols: 3,
+                    },
+                },
+                Marker: {
+                    class: Marker,
+                    shortcut: "CMD+SHIFT+M",
+                },
+                inlineCode: {
+                    class: InlineCode,
+                    shortcut: "CMD+SHIFT+M",
+                },
+            },
+        });
+    }
+
+    function EditorJsSetting(dataJson) {
+        return new EditorJS({
+            holder: "editorjs",
+
+            tools: {
+                header: {
+                    class: Header,
+                    shortcut: "CMD+SHIFT+H",
+                },
+                style: EditorJSStyle.StyleInlineTool,
+                delimiter: Delimiter,
+                paragraph: {
+                    class: Paragraph,
+                    inlineToolbar: true,
+                },
+                underline: Underline,
+                quote: {
+                    class: Quote,
+                    inlineToolbar: true,
+                    shortcut: "CMD+SHIFT+O",
+                    config: {
+                        quotePlaceholder: "Enter a quote",
+                        captionPlaceholder: "Quote's author",
+                    },
+                },
+                list: {
+                    class: List,
+                    inlineToolbar: true,
+                },
+                checklist: {
+                    class: Checklist,
+                    inlineToolbar: true,
+                },
+                image: {
+                    class: ImageTool,
+                    config: {
+                        endpoints: {
+                            byFile: `${hostname}/fileUpload`,
+                            byUrl: `${hostname}/fetchUrl`,
+                        },
+                    },
+                },
+                linkTool: {
+                    class: LinkTool,
+                    config: {
+                        endpoint: `${hostname}/fetchLink`,
+                    },
+                },
+                code: CodeTool,
+                raw: RawTool,
+                table: {
+                    class: Table,
+                    inlineToolbar: true,
+                    config: {
+                        rows: 2,
+                        cols: 3,
+                    },
+                },
+                Marker: {
+                    class: Marker,
+                    shortcut: "CMD+SHIFT+M",
+                },
+                inlineCode: {
+                    class: InlineCode,
+                    shortcut: "CMD+SHIFT+M",
+                },
+            },
+            data: JSON.parse(dataJson),
+        });
+    }
+
+</script>
+
+<script src="{% static 'js/jsonToHtml.js'%}"></script>
+<script src="{% static 'js/main.js'%}"></script>
+<script src="{% static 'js/sidebar.js'%}"></script>
+{% endblock %}
+
+{% block body %}
+{% static "" as baseUrl %}
+
+<div class="container">
+    <div class="title-wrappper">
+        <div class="blog-content-wrapper">
+            <input class="blog-title" id="title" contenteditable="true" placeholder="Title of Blog"
+                value="{{title}}"></input>
+        </div>
+    </div>
+    <div id="editorjs"></div>
+    <div class="side-left-container">
+        <div class="editing-info">
+            <button type="button" onclick="saveFunction()" class="btn btn-success">Save Blog</button>
+            <a href="/{{author.slug}}/{{id}}/preview" target="_blank" class="btn btn-success"
+                style="margin-top: 10px;">Preview</a>
+            <div>
+                <button type="button" class="btn btn-success modalOpenButton" style="margin-top: 10px;">Add
+                    Audio</button>
+
+                <div class="modal">
+                    <div id="audio-genration-content" class="modal-content">
+                        <span class="close">&times;</span>
+                        <div>
+                            <div>
+                                <h2>Generate automatic audio for the blog</h2>
+                                <button type="button" class="btn btn-success audio-button">Generate <i
+                                        class="fa fa-check" aria-hidden="true"></i></button>
+                            </div>
+                            <hr>
+                            <h2>Upload your own audio</h2>
+                            <br>
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="file" accept="audio/*" id="audio" name="audio" required>
+                                <button type="submit" class="btn btn-success">Upload <i class="fa fa-check"
+                                        aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3>Visibility</h3>
+            <div class="visibility">
+                {% if is_private %}
+                <input type="radio" name="visibility" id="public" value="public">
+                <label for="public" class="custom-tooltip">Public<span class="tooltiptext">Visible to
+                        everyone</span></label>
+                <br>
+                <input type="radio" name="visibility" id="private" value="private" checked="checked">
+                <label for="private" class="custom-tooltip">Private<span class="tooltiptext">Only visible to
+                        you</span></label>
+                {% else %}
+                <input type="radio" name="visibility" id="public" value="public" checked="checked">
+                <label for="public" class="custom-tooltip">Public<span class="tooltiptext">Visible to
+                        everyone</span></label>
+                <br>
+                <input type="radio" name="visibility" id="private" value="private">
+                <label for="private" class="custom-tooltip">Private<span class="tooltiptext">Only visible to
+                        you</span></label>
+                {% endif %}
+            </div>
+            <!-- <input type="text" placeholder="Custom Slug of Blog" name="slug" id="slug" value="{{slug}}"/> -->
+        </div>
+    </div>
+    <div class="select-wrapper blog-content-wrapper">
+        <h3>Add or change tags below, so readers know what your story is about</h3>
+        <!-- <select class="selectpicker" id="blog-tags" multiple data-live-search="true">
+        {% for tag in tags %}
+            {% if tag.is_selected %}
+            <option value="{{tag.id}}" selected>{{tag.name}}</option>
+            {% else %}
+            <option value="{{tag.id}}">{{tag.name}}</option>
+            {% endif %}
+        {% endfor %}
+        </select> -->
+
+        <select class="form-control blog-tags" id="blog-tags" multiple="multiple">
+            {% for tag in tags %}
+            {% if tag.is_selected %}
+            <option value="{{tag.name}}" selected>{{tag.name}}</option>
+            {% else %}
+            <option value="{{tag.name}}">{{tag.name}}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        <script>
+            $(".blog-tags").select2({
+                tags: true
+            });
+        </script>
+    </div>
+
+    <div class="audio-container">
+        {% if audio_complete == 1 %}
+        <audio controls="controls" preload="auto">
+            <source src="{{baseUrl}}audio/{{id}}_final.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        {% elif audio_complete == 2 %}
+        <audio controls="controls" preload="auto">
+            <source src="/media/audio/{{id}}_final.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        {% endif %}
+    </div>
+    <div class="notification-container">
+        <div class="notification notification-s">
+        </div>
+        <div class="notification notification-v">
+        </div>
+    </div>
+</div>
+{% csrf_token %}
+<script>
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const blog_id = '{{id}}';
+</script>
+<script>
+    let data = '{{data}}'.replaceAll('&quot;', '"').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&nbsp;', ' ').replaceAll('&amp;amp;nbsp;', ' ').replaceAll('&#x27;', "'").slice(1, -1);
+    let editor;
+
+    if(!window.console) window.console = {};
+    let methods = ["log", "debug", "warn", "info"];
+    for(var i=0;i<methods.length;i++){
+        console[methods[i]] = function(){};
+    }
+    
+    if(!data){
+        data = `{"time":1616563993040,"blocks":[{"type":"paragraph","data":{"text":"Type blog content here ...","alignment":"left"}}],"version":"2.19.3"}`;
+    }
+
+    // if ("{{is_new}}" === "True") {
+    //     editor = EditorJsSettingWithoutData();
+    // } else {
+        editor = EditorJsSetting(data);
+    // }
+
+    function saveFunction() {
+        editor
+            .save()
+            .then((output) => {
+                if (!document.getElementById("title").value) {
+                    alert("Enter Blog Title");
+                    return;
+                }
+
+                fetch(`${hostname}/saveData/`, {
+                    method: "POST",
+
+                    body: JSON.stringify({
+                        // slug: document.getElementById("slug").value,
+                        title: document.getElementById("title").value,
+                        blog_body: JSON.stringify(output),
+                        id: "{{id}}",
+                        tags: $("#blog-tags").val()
+                    }),
+
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                        "X-CSRFToken": csrftoken
+                    },
+                })
+                    .then((response) => {
+                        let notificationDiv = $(".notification-container .notification-s");
+                        if (response.status == 200) {
+                            notificationDiv.css("display", "block").css("background", "#5cb85c").html("Post Saved").fadeOut(5000);
+                        } else {
+                            notificationDiv.css("display", "block").css("background", "#d9534f").html("Error Occured").fadeOut(5000);
+                        }
+                    })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+</script>
+{% endblock %}

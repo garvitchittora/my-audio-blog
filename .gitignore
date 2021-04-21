@@ -1,0 +1,9 @@
+.vscode
+eye_ear/myenv
+__pycache__
+migrations
+eye_ear/media
+eye_ear/db.sqlite3
+eye_ear/static/audio
+garvit.pem
+.env

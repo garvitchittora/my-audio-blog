@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>Invalid Link | My Audio Blogs</title>
+<meta name="title" content="Register | My Audio Blogs">
+<meta content="Invalid Link page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." name="description" />
+<meta content="Invalid Link, My Audio Blogs, Blogs, Audio Blogs, audio with blogs, best blogs, audible blogs" name="keywords" />
+
+<meta name="og:title" content="Invalid Link | My Audio Blogs" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="https://www.myaudioblogs.co/" />
+<meta name="og:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg" />
+<meta name="og:description" content="Invalid Link page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." />
+
+<meta name="twitter:title" content="Invalid Link | My Audio Blogs">
+<meta name="twitter:description" content="Invalid Link page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio.">
+<meta name="twitter:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.myaudioblogs.co/">
+{% endblock %}
+
+{% block body %}
+<div class="container login-form">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1><i class="fa fa-question" aria-hidden="true"></i> Activation link is invalid!</h1>
+      <div class="link-wrapper">
+        <p><a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></p>
+        <p><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <img src="{% static 'image/svg/invalid.svg' %}" alt="invalid">
+    </div>
+  </div>
+</div>
+{% endblock %}

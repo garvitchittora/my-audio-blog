@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>Confirm Email | My Audio Blogs</title>
+<meta name="title" content="Confirm Email | My Audio Blogs">
+<meta content="Confirm Email page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." name="description" />
+<meta content="Confirm Email, My Audio Blogs, Blogs, Audio Blogs, audio with blogs, best blogs, audible blogs" name="keywords" />
+
+<meta name="og:title" content="Confirm Email | My Audio Blogs" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="https://www.myaudioblogs.co/" />
+<meta name="og:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg" />
+<meta name="og:description" content="Confirm Email page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." />
+
+<meta name="twitter:title" content="Confirm Email | My Audio Blogs">
+<meta name="twitter:description" content="Confirm Email page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio.">
+<meta name="twitter:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.myaudioblogs.co/">
+{% endblock %}
+
+{% block body %}
+<div class="container login-form">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="fs-3rem"><i class="fa fa-envelope" aria-hidden="true"></i> Please confirm your email address to complete the registration</h1>
+      <div class="link-wrapper">
+        <p><a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></p>
+        <p><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <img src="{% static 'image/svg/email.svg' %}" alt="email">
+    </div>
+  </div>
+</div>
+{% endblock %}

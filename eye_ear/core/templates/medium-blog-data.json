@@ -1,0 +1,190 @@
+{
+    "data": {
+        "post": {
+            "id": "c3a217dabf11",
+            "title": "Simple Audio Processing in Python With Pydub",
+            "clapCount": 365,
+            "voterCount": 75,
+            "voters": {
+                "items": [
+                    {
+                        "user": {
+                            "id": "2804498f0eed",
+                            "name": "Garvit Chittora",
+                            "bio": "I’m a student who is enthusiastic about technology and programming. I am currently studying Information Technology at IIIT Allahabad.",
+                            "username": "garvitchittora2016",
+                            "__typename": "User",
+                            "imageId": "1*IYl1PZTEBh2_HgJwxYHc0Q.jpeg",
+                            "mediumMemberAt": 0,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "b3234246ce6c",
+                            "name": "Matheus Lara Veloza",
+                            "bio": "Co-Founder and Head of Innovation at @Zen and Amateur Investor",
+                            "username": "matheusveloza",
+                            "__typename": "User",
+                            "imageId": "2*iUAELFuQzzusB6vrUti2Ug.jpeg",
+                            "mediumMemberAt": 1593121613123,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "9cb61f103e60",
+                            "name": "Nisuga Jayawardana",
+                            "bio": "",
+                            "username": "nisugajayawardana",
+                            "__typename": "User",
+                            "imageId": "1*6i3-xV4acvd6yPIWzWc17A.jpeg",
+                            "mediumMemberAt": 0,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "839118490d0c",
+                            "name": "Airkyzzz",
+                            "bio": "",
+                            "username": "airkyzzz230",
+                            "__typename": "User",
+                            "imageId": "0*pVHmI3teF0VAhX-Y",
+                            "mediumMemberAt": 0,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "5c9986575799",
+                            "name": "yan xu",
+                            "bio": "",
+                            "username": "xuyan.nus",
+                            "__typename": "User",
+                            "imageId": "0*4UmTNsgSw3_YkDNd.jpg",
+                            "mediumMemberAt": 1606362619000,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "8da795cab96c",
+                            "name": "Shubham upadhyay",
+                            "bio": "",
+                            "username": "mailmeshubhamsomu",
+                            "__typename": "User",
+                            "imageId": "",
+                            "mediumMemberAt": 1601155215063,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "331e0d32c37d",
+                            "name": "Helge Haug",
+                            "bio": "",
+                            "username": "hhaug63",
+                            "__typename": "User",
+                            "imageId": "0*W7-RnTy9W051KkZh.jpg",
+                            "mediumMemberAt": 0,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "e338c95008e6",
+                            "name": "Himadri Sankar Chatterjee",
+                            "bio": "",
+                            "username": "himadrisankarchatterjee",
+                            "__typename": "User",
+                            "imageId": "1*T6Frnr85ZXJXXcOKmgHBAg.png",
+                            "mediumMemberAt": 0,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "7e84d5b8fe3f",
+                            "name": "Freddy da Paz Ilha",
+                            "bio": "",
+                            "username": "freddyilha",
+                            "__typename": "User",
+                            "imageId": "0*zyPDzl0SZmm7pPSR",
+                            "mediumMemberAt": 0,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    },
+                    {
+                        "user": {
+                            "id": "7c5a4782e102",
+                            "name": "Scott Gleim",
+                            "bio": "",
+                            "username": "sgleim",
+                            "__typename": "User",
+                            "imageId": "2*tjOZGfuez6_OilFVt-Kl3A.png",
+                            "mediumMemberAt": 1525092236543,
+                            "customDomainState": null,
+                            "hasSubdomain": false,
+                            "isFollowing": false
+                        },
+                        "clapCount": null,
+                        "__typename": "VoterItem"
+                    }
+                ],
+                "pagingInfo": {
+                    "next": {
+                        "page": 1,
+                        "__typename": "PageParams"
+                    },
+                    "__typename": "Paging"
+                },
+                "__typename": "VoterConnection"
+            },
+            "collection": {
+                "id": "d0b105d10f0a",
+                "__typename": "Collection"
+            },
+            "mediumUrl": "https://medium.com/better-programming/simple-audio-processing-in-python-with-pydub-c3a217dabf11",
+            "__typename": "Post"
+        }
+    }
+}
+
+{"data":{"clap":{"__typename":"Post","id":"c3a217dabf11","clapCount":371,"viewerClapCount":11,"voterCount":75,"recommenders":[]}}}

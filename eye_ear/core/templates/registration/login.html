@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% load socialaccount %}
+
+{% block head %}
+<title>Login | My Audio Blogs</title>
+<meta name="title" content="Login | My Audio Blogs">
+<meta content="Login page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." name="description" />
+<meta content="Login, Register, My Audio Blogs, Blogs, Audio Blogs, audio with blogs, best blogs, audible blogs" name="keywords" />
+
+<meta name="og:title" content="Login | My Audio Blogs" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="https://www.myaudioblogs.co/" />
+<meta name="og:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg" />
+<meta name="og:description" content="Login page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." />
+
+<meta name="twitter:title" content="Login | My Audio Blogs">
+<meta name="twitter:description" content="Login page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio.">
+<meta name="twitter:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.myaudioblogs.co/">
+{% endblock %}
+
+{% block body %}
+<div class="container login-form">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Login</h1>
+      {% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+      {% endif %}
+
+      {% if next %}
+      {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+      {% else %}
+      <p>Please login to see this page.</p>
+      {% endif %}
+      {% endif %}
+
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_username">Email:</label>
+          {{ form.username }}
+        </div>
+        <div class="form-group">
+          {{ form.password.label_tag }}
+          {{ form.password }}
+        </div>
+        <button type="submit" class="btn btn-success">Login</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    </div>
+    <div class="col-lg-6">
+      <img src="{% static 'image/svg/login.svg' %}" alt="login">
+      <div class="link-wrapper">
+        <!-- <p><a href="{% provider_login_url 'google' %}"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></p> -->
+        <p><a href="{% url 'signup' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Register</a></p>
+        <p><a href="{% url 'password_reset' %}"><i class="fa fa-key" aria-hidden="true"></i> Forgot password</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

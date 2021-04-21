@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>Page not found | My Audio Blogs</title>
+<meta name="title" content="Page not found | My Audio Blogs">
+<meta content="Page not found page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." name="description" />
+<meta content="Page not found, My Audio Blogs, Blogs, Audio Blogs, audio with blogs, best blogs, audible blogs" name="keywords" />
+
+<meta name="og:title" content="Page not found | My Audio Blogs" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="https://www.myaudioblogs.co/" />
+<meta name="og:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg" />
+<meta name="og:description" content="Page not found page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio." />
+
+<meta name="twitter:title" content="Page not found | My Audio Blogs">
+<meta name="twitter:description" content="Page not found page of My Audio Blogs. My Audio Blogs is a platform that allows users to Discover Blogs with Audio.">
+<meta name="twitter:image" content="https://www.myaudioblogs.co/static/image/logo/favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.myaudioblogs.co/">
+{% endblock %}
+
+{% block body %}
+<div class="container login-form">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Oh no,</h1>
+      <p>Just like unicorn - This page is extinct..</p>
+        <p>but you don't worry, magic will never die. Go to <a href="/" class="purple-color"><i class="fa fa-home" aria-hidden="true"></i> homepage</a> to discover all magical wonders again.</p>
+    </div>
+    <div class="col-lg-6">
+      <img src="{% static 'image/svg/404.svg' %}" alt="login">
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

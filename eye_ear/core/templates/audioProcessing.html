@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .outer{
+  background:#F1F3F4;
+  width:90vw;
+  height:30px;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+@keyframes leftToRight {
+  0%   {margin-left: 0;}
+  100% {margin-left: 100%;}
+}
+
+.inner{
+  background:#333;
+  width:10%;
+  height:30px;
+  animation-name: leftToRight;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+    </style>
+    <div class="outer">
+        <div class="inner">
+          Processing
+        </div>
+      </div>
+</body>
+</html>
